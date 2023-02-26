@@ -1,3 +1,11 @@
+:root {
+    --primary-color: #645bff;
+    --secondary-color: #fff;
+    --hover-color: #111;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+}
+
 .container {
     max-width: 428px;
     padding-left: 15px;
@@ -10,11 +18,11 @@ body {
     background-color: #212121;
 }
 
-form{
+form {
     border-radius: 30px;
-        background: #212121;
-        box-shadow: 15px 15px 30px rgb(25, 25, 25),
-            -15px -15px 30px rgb(60, 60, 60);
+    background: #212121;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+        -15px -15px 30px rgb(60, 60, 60);
     padding: 20px;
 }
 
@@ -153,10 +161,112 @@ input:valid~label {
     }
 }
 
+.section-button{
+    display: flex;
+
+}
+
+/* .modal-button {
+    margin-right: 20px;
+} */
+.log {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 0.8em 1.3em 0.8em 0.9em;
+    color: white;
+    background: #ad5389;
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    border: none;
+    letter-spacing: 0.05em;
+    border-radius: 16px;
+    margin-right: 20px;
+}
+
+.log svg {
+    margin-right: 3px;
+    transform: rotate(30deg);
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.log span {
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.log:hover svg {
+    transform: translateX(5px) rotate(90deg);
+}
+
+.log:hover span {
+    transform: translateX(7px);
+}
+
+.sign {
+    --primary-color: #645bff;
+    --secondary-color: #fff;
+    --hover-color: #111;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 20px;
+    color: var(--secondary-color);
+    padding: 1em 1.8em;
+    background: var(--primary-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    gap: 0.6em;
+    font-weight: bold;
+}
+
+.sign .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign .arrow {
+    margin-top: 1px;
+    width: var(--arrow-width);
+    background: var(--primary-color);
+    height: var(--arrow-stroke);
+    position: relative;
+    transition: 0.2s;
+}
+
+.sign .arrow::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid var(--secondary-color);
+    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+    display: inline-block;
+    top: -3px;
+    right: 3px;
+    transition: 0.2s;
+    padding: 3px;
+    transform: rotate(-45deg);
+}
+
+.sign:hover {
+    background-color: var(--hover-color);
+}
+
+.sign:hover .arrow {
+    background: var(--secondary-color);
+}
+
+.sign:hover .arrow:before {
+    right: 0;
+}
 
 
 
-button {
+
+.register {
     position: relative;
     padding: 1em 1.8em;
     outline: none;
@@ -175,16 +285,16 @@ button {
     margin-left: 150px;
 }
 
-button:hover {
+.register:hover {
     box-shadow: 0 0 10px #ae00ff, 0 0 25px #001eff, 0 0 50px #ae00ff;
     transition-delay: 0.6s;
 }
 
-button span {
+.register span {
     position: absolute;
 }
 
-button span:nth-child(1) {
+.register span:nth-child(1) {
     top: 0;
     left: -100%;
     width: 100%;
@@ -192,12 +302,12 @@ button span:nth-child(1) {
     background: linear-gradient(90deg, transparent, #ae00ff);
 }
 
-button:hover span:nth-child(1) {
+.register:hover span:nth-child(1) {
     left: 100%;
     transition: 0.7s;
 }
 
-button span:nth-child(3) {
+.register span:nth-child(3) {
     bottom: 0;
     right: -100%;
     width: 100%;
@@ -205,13 +315,13 @@ button span:nth-child(3) {
     background: linear-gradient(90deg, transparent, #001eff);
 }
 
-button:hover span:nth-child(3) {
+.register:hover span:nth-child(3) {
     right: 100%;
     transition: 0.7s;
     transition-delay: 0.35s;
 }
 
-button span:nth-child(2) {
+.register span:nth-child(2) {
     top: -100%;
     right: 0;
     width: 2px;
@@ -219,13 +329,13 @@ button span:nth-child(2) {
     background: linear-gradient(180deg, transparent, #ae00ff);
 }
 
-button:hover span:nth-child(2) {
+.register:hover span:nth-child(2) {
     top: 100%;
     transition: 0.7s;
     transition-delay: 0.17s;
 }
 
-button span:nth-child(4) {
+.register span:nth-child(4) {
     bottom: -100%;
     left: 0;
     width: 2px;
@@ -233,13 +343,13 @@ button span:nth-child(4) {
     background: linear-gradient(360deg, transparent, #001eff);
 }
 
-button:hover span:nth-child(4) {
+.register:hover span:nth-child(4) {
     bottom: 100%;
     transition: 0.7s;
     transition-delay: 0.52s;
 }
 
-button:active {
+.register:active {
     background: #ae00af;
     background: linear-gradient(to top right, #ae00af, #001eff);
     color: #bfbfbf;
@@ -247,7 +357,7 @@ button:active {
     transition: 0.1s;
 }
 
-button:active span:nth-child(1) span:nth-child(2) span:nth-child(2) span:nth-child(2) {
+.register:active span:nth-child(1) span:nth-child(2) span:nth-child(2) span:nth-child(2) {
     transition: none;
     transition-delay: none;
 }
